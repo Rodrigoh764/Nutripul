@@ -1,0 +1,44 @@
+input {
+  font-size: 50px;
+  margin-bottom: 40px;
+  background: transparent;
+  border: none;
+  border-bottom: 5px solid rgb(201, 101, 19);
+  color: rgb(198, 255, 176);
+  outline: none;
+  width: 500px;
+
+}
+
+form {
+  height: 0px;
+  width: 800px;
+}
+h2 {
+  color: #ffffff;
+  font-size: 50px;
+}
+P{
+    color: rgb(169, 255, 191);
+    font-size: 20px;
+}
+#text{
+    size: 10px;
+}
+#registrar {
+  margin-top: 50px;
+  background: rgb(75, 141, 0);
+  color: #ffffff;
+  font-size: 35px;
+  transition: all ease 0.5s;
+  transform: translatex(0);
+  opacity: 1;
+  border-radius: 10px;
+}
+#registrar:hover {
+  background-color: rgb(220, 123, 27);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transform: translatex(0px);
+  opacity: 1;
+}

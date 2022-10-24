@@ -1,0 +1,85 @@
+
+                        /* PLANTILLA PARA EL REGISTRO */
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: rgb(76, 91, 54);
+    /* background-image: url("../img/jugos7.jpg");
+    background-size: cover; */
+}
+h1{
+    color: rgb(255, 255, 255);
+    font-size: 60px;
+}
+#formulario{
+    padding-top: 160px;
+    text-align: center;
+}
+form{
+    background-color: dimgray;
+    display: inline-block;
+    opacity: 90%;
+    margin-bottom: 74px;
+    width: 500px;
+}
+label{
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    padding-right: 50px;
+    padding-bottom: 80px;
+
+}
+#label{
+    float: left;
+    padding-left: 0%;
+    margin-left: 0%;
+    border-left: 0px;
+}
+
+
+button{
+    
+    background: rgb(75, 141, 0);
+    color: #ffffff;
+    font-size: 30px;
+
+    transition: all ease 1s;
+    transform: translatex(0);
+   opacity:1;
+
+
+}
+button:hover{
+    background-color: rgb(220, 123, 27);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    
+    transform: translatex(0px);
+opacity:1;
+    
+}
+#img-botton{
+    float: right;
+}
+/* esta ya en el footer */
+footer{
+    background-color: rgb(183, 89, 22);
+    height: 120px;
+    position: relative;
+    opacity: 70%;
+
+    position:absolute;
+
+    bottom:0px;
+    right:0px;
+
+    width: 100%;
+    
+
+}
+
+#container{
+    text-align: center;
+
+}

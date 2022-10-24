@@ -1,0 +1,15 @@
+footer{
+    background-color: rgb(183, 89, 22);
+    height: 120px;
+    position: relative;
+    opacity: 70%;
+
+    position:absolute;
+
+    bottom:0px;
+    right:0px;
+
+    width: 100%;
+    
+
+}

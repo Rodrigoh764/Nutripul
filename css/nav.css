@@ -1,0 +1,41 @@
+body{
+  padding: 0%;
+  margin: 0%;
+  background-color: rgb(76, 91, 54);
+}
+header {
+    background: rgba(140, 80, 7, 0.7);
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+  }
+
+  nav ul {
+    list-style: none;
+    overflow: hidden; 
+  }
+  nav ul li {
+    float: right;
+    font-size: 35px;
+  }
+ #buscador {
+   width: 600px;
+   font-size: 30px;
+   margin-left: 180px;
+   margin-top: 20px;
+   border-radius: 10px;
+  }
+  nav ul li a {
+    display: block; 
+    padding: 20px;
+    color: rgb(223, 255, 174);
+    text-decoration: none;
+    
+    
+  }
+  nav ul li:hover {
+    background: #eca023;
+  }
+  img{
+    float: left;
+  }
