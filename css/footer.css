@@ -1,15 +1,16 @@
 footer{
-    background-color: rgb(183, 89, 22);
+
+    background-color: #044259;
     height: 120px;
     position: relative;
-    opacity: 70%;
-
+    /* opacity: 70%; */
     position:absolute;
-
     bottom:0px;
+    left: 0;
     right:0px;
-
     width: 100%;
-    
 
+}
+#logoBajo{
+    float: right;
 }

@@ -1,6 +1,6 @@
 <?php
 //LLENADO DE DATOS DEL DOMICILIO O ACTUALIZACION
-include("../php/conexionBD.php");
+include("../conexionbd/conexionBD.php");
 $conexion = conectar();
 
 //tomamos los datos obtenidos
@@ -13,7 +13,6 @@ $calle = $_POST["calle"];
 $cp = $_POST["cp"];
 $genero = $_POST["genero"];
 $referencia = $_POST["referencia"];
-
 
 
 $sql = "select * from domicilio where cliente_id ='$id'";

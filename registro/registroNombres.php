@@ -1,27 +1,23 @@
 <?php
-include("nav.php");
+include("../nav/nav.php");
 ?>
-<link rel="stylesheet" href="../css/nav.css">
-<link rel="stylesheet" href="../css/registro.css">
-<link rel="stylesheet" href="../css/formulario.css">
-<body>
 
+<link rel="stylesheet" href="../css/registroUsuario.css">
+<body onload="Javascript:history.go(1);" onunload="Javascript:history.go(1)">
+<h1></h1>
     <div id="formulario">
-    <form action="../php/valiNombres.php" method="POST">
+    <form action="../ValidaDatos/valiNombres.php" method="POST">
         <div class="container">
-            <h1>Ingresa tus datos:</h1>
-            <input type="text" name="nombre" id="nombre" required placeholder="Nombre(S)"><br>
-            <input type="text" name="apellidoPa" id="nombre" required placeholder="Apellido Paterno"><br>
-            <input type="text" name="apellidoMa" id="nombre" required placeholder="Apellido Materno"><br>
+            <h1 id="titulo">Ingresa tus datos:</h1>
+            <input id="entrada2" type="text" name="nombre" id="nombre" required placeholder="Nombre(S)"><br>
+            <input id="entrada2" type="text" name="apellidoPa" id="nombre" required placeholder="Apellido Paterno"><br>
+            <input id="entrada2" type="text" name="apellidoMa" id="nombre" required placeholder="Apellido Materno"><br>
         </div>
        <div class="boton">
-        <button type="submit">CONTINUAR</button>
+        <button type="submit" id="registra3">CONTINUAR</button>
        </div>
         
     </form>
 
-    <?php
-    include("footer.php");
-    ?>
 </div>
 </body>

@@ -1,13 +1,15 @@
+/*Style de la barra de menu con usuario*/
 body{
   padding: 0%;
   margin: 0%;
-  background-color: rgb(76, 91, 54);
+  background-color:#c7c7c7;
 }
+/*Barra de menu*/
 header {
-    background: rgba(140, 80, 7, 0.7);
+    background: brown;
     width: 100%;
     position: fixed;
-    z-index: 100;
+    /* z-index: 100; */
   }
 
   nav ul {
@@ -17,25 +19,49 @@ header {
   nav ul li {
     float: right;
     font-size: 35px;
+    
+  
   }
  #buscador {
-   width: 600px;
+   width: 500px;
    font-size: 30px;
-   margin-left: 180px;
+   margin-left: 0px;
    margin-top: 20px;
    border-radius: 10px;
+   
   }
+  /*Quitar style de Anclas*/
   nav ul li a {
     display: block; 
-    padding: 20px;
-    color: rgb(223, 255, 174);
+    padding: 10px;
+    color: rgb(255, 255, 255);
     text-decoration: none;
-    
-    
+  
   }
+
   nav ul li:hover {
-    background: #eca023;
+    background:  rgb(202, 54, 54);
   }
   img{
     float: left;
+
   }
+  #carrito{
+   float: right;
+   max-width: 40px;
+  }
+
+  
+.mostrar{
+    position: absolute;
+    overflow: hidden;
+    display: none;
+    background-color: rgb(115, 102, 102);
+}
+.accion:hover .mostrar{
+    display: block;
+}
+li a:hover{
+  background-color: rgb(205, 26, 26);
+  color: white;
+}

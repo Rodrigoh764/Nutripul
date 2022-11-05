@@ -1,24 +1,17 @@
 <?php
-include("nav.php");
+include("../nav/nav.php");
 ?>
-<link rel="stylesheet" href="../css/nav.css">
-<link rel="stylesheet" href="../css/registro.css">
-<link rel="stylesheet" href="../css/formulario.css">
+<link rel="stylesheet" href="../css/registroUsuario.css">
 
-<body>
-
+<body onload="Javascript:history.go(1);" onunload="Javascript:history.go(1)">
+    <h1></h1>
     <div id="formulario">
-        <h1>Ingrese su e-mail</h1>
-        <form action="../php/valiCorreo.php" method="POST">
-            <input type="text" name="correo" id="correo" placeholder="Correo" required><br>
-            
-                <button type="submit" id="registrar">REGISTRARSE</button>
-          
 
+        <form action="../ValidaDatos/valiCorreo.php" method="POST">
+            <h1 id="titulo">Ingrese su e-mail</h1>
+            <input type="text" name="correo" id="entrada" placeholder="Correo" required><br>
+            <button type="submit" id="registra">CONFIRMAR</button>
         </form>
     </div>
 
-    <?php
-    include("footer.php");
-    ?>
 </body>

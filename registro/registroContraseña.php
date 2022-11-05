@@ -1,26 +1,28 @@
 <?php
-include("nav.php");
+include("../nav/nav.php");
 ?>
-<link rel="stylesheet" href="../css/nav.css">
-<link rel="stylesheet" href="../css/registro.css">
-<link rel="stylesheet" href="../css/formulario.css">
+
+<link rel="stylesheet" href="../css/registroUsuario.css">
+<body onload="Javascript:history.go(1);" onunload="Javascript:history.go(1)">
+    
+<h1></h1>
     <div id="formulario">
-    <form action="../php/valiContraseña.php" method="POST">
+    <form action="../ValidaDatos/valiContraseña.php" method="POST">
         <div class="container">
-            <h1 id="text">Ingrese una contraseña</h1>
+            <h1 id="titulo">Ingrese una contraseña</h1>
             <p>LA CONTRASEÑA DEBE SER MAYOR O IGUAL A 8 DIGITOS, PUEDE SER ALFANÚMERICO</p>
-            <input type="password" name="contraseña1" required placeholder="Nueva contraseña"><br>
+            <input id="entrada2" type="password" name="contraseña1" required placeholder="Nueva contraseña"><br>
             <!-- <h1 id="text">Repita la contraseña</h1> -->
-            <input type="password" name="contraseña2" required placeholder="Repita la contraseña">
+            <input id="entrada2" type="password" name="contraseña2" required placeholder="Repita la contraseña">
         </div>
         
        <div class="boton">
-        <button type="submit">CONTINUAR</button>
+        <button type="submit" id="registra3">CONTINUAR</button>
        </div>
         
     </form>
     </div>
     <?php
-    include("footer.php");
+    include("../footer/footer.php");
     ?>
 </body>

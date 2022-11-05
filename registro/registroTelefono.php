@@ -1,26 +1,21 @@
 <?php
-include("nav.php");
+include("../nav/nav.php");
 ?>
-<link rel="stylesheet" href="../css/nav.css">
-<link rel="stylesheet" href="../css/registro.css">
-<link rel="stylesheet" href="../css/formulario.css">
-<body>
-    
+
+<link rel="stylesheet" href="../css/registroUsuario.css">
+<body onload="Javascript:history.go(1);" onunload="Javascript:history.go(1)">
+    <h1></h1>
     <div id="formulario">
-    <form action="../php/valiTelefono.php" method="POST">
-    <h1>Ingresa tu número telefonico</h1>
+    <form action="../ValidaDatos/valiTelefono.php" method="POST">
+    <h1 id="titulo">Ingresa tu número telefonico</h1>
         <div class="container">
-        
-        <h1>+52</h1>
-            <input type="number" name="telefono" required value="55">
+            <input id="entrada" type="number" name="telefono" required value="55">
         </div>
        <div class="boton">
-        <button type="submit">CONTINUAR</button>
+        <button type="submit"id="registra">CONTINUAR</button>
        </div>
         
     </form>
     </div>
-    <?php
-    include("footer.php");
-    ?>
+
 </body>

@@ -1,47 +1,31 @@
 .container{
-    padding-top: 150px;
+    padding-top: 120px;
    
 }
 
-#perfil{
-    width: 100%;
-    padding-top: 80px;
-}
-h1{
-    text-align: center;
-}
+
 table{
-    background-color: rgb(101, 94, 94);
+    background-color: rgb(151, 146, 146);
     padding: 10px;
     width: 100%;
-    font-size: 30px;
+    font-size: 15px;
 }
 legend{
-    font-size: 40px;
+    font-size: 25px;
+    font-style: oblique;
+    text-shadow: 2px 2px 7px #6f0b0b;
 }
 #tabla{
-    margin-top: 20px;
-}
-#nombre{
     margin-top: 0px;
     padding-top: 0px;
-    border-top: 0px;
 }
 
-#boton{
-    padding-top: 25px;
+
+ #boton{
+    padding-top: 10px;
     text-align: center;
 }
-button{
-    font-size: 35px;
-    background-color: rgb(220, 123, 27);
-    border-radius: 10px;
-}
-button:hover{
-    transition: all ease 0.5s;
-    background-color: rgb(219, 152, 85);
-    font-size: 40px;
-}
+
 select{
     background-color: darkgrey;
     width: 100%;
@@ -49,14 +33,43 @@ select{
    
 }
 input{
-    background-color: darkgrey;
+    background-color: rgb(244, 244, 244);
     width: 100%;
     height: 100%;
     font-size: 30px;
 }
+select{
+    background-color: rgb(245, 245, 245);
+}
 option{
     font-size: 20px;
 }
-td{
-    background-color: darkgrey; 
+
+#fijo{
+    background-color: #818181;
+}
+th{
+    font-style: oblique;
+}
+button{
+    padding: 10px;
+    width: 300px;
+    background:rgb(23, 91, 116);
+    color: #ffffff;
+    text-shadow: 5px 5px 10px #000000;
+    font-size: 30px;
+    transition: all ease 1s;
+    transform: translatex(0);
+    opacity:1;
+    border-radius: 50px;
+
+}
+button:hover{
+    background-color:  rgb(85, 162, 172);
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px 5px #003d63;
+    cursor: pointer;
+    transform: translatex(0px);
+    opacity:1;
+    
 }
