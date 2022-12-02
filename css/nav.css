@@ -6,10 +6,10 @@ body{
 }
 /*Barra de menu*/
 header {
-    background: brown;
+    background: rgb(112, 9, 9);
     width: 100%;
     position: fixed;
-    /* z-index: 100; */
+ 
   }
 
   nav ul {
@@ -18,12 +18,12 @@ header {
   }
   nav ul li {
     float: right;
-    font-size: 35px;
+    font-size: 29px;
     
   
   }
  #buscador {
-   width: 500px;
+   width: 460px;
    font-size: 30px;
    margin-left: 0px;
    margin-top: 20px;
@@ -36,6 +36,8 @@ header {
     padding: 10px;
     color: rgb(255, 255, 255);
     text-decoration: none;
+
+    font-family: 'Tangerine', Monospace;
   
   }
 

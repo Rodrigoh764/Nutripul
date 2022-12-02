@@ -11,7 +11,7 @@ if($verificar = mysqli_fetch_array($resul)){ ?>
 
 <?php include("../nav/nav.php"); ?>
 
-<link rel="stylesheet" href="../css/registroUsuario.css">
+<link rel="stylesheet" href="../css/registroValidacion.css">
     <body>
 
         <div id="formulario">
@@ -19,6 +19,8 @@ if($verificar = mysqli_fetch_array($resul)){ ?>
             <h1>ASEGURATE DE INGRESAR LOS DATOS CORRECTAMENTE</h1>
             <a href="../registro/registroCorreo.php"> <button type="submit" id="registrar">Regresar</button></a>
         </div>
+    </body>
+    <?php include("../footer/footer.php"); ?>
         
 <?php
 }else{
@@ -36,7 +38,7 @@ if($verificar = mysqli_fetch_array($resul)){ ?>
 include("../nav/nav.php");
 
 ?>
-    <link rel="stylesheet" href="../css/registroUsuario.css">
+    <link rel="stylesheet" href="../css/registroExitoso.css">
 
         
         <body onload="Javascript:history.go(1);" onunload="Javascript:history.go(1)">
@@ -50,6 +52,7 @@ include("../nav/nav.php");
         
             
         </body>
+        <?php include("../footer/footer.php"); ?>
         <?php
         
     
@@ -61,7 +64,7 @@ include("../nav/nav.php");
 include("../nav/nav.php");
 
 ?>
-         <link rel="stylesheet" href="../css/registroUsuario.css">
+         <link rel="stylesheet" href="../css/registroError.css">
         <body>
         
             <div id="formulario">
@@ -69,9 +72,9 @@ include("../nav/nav.php");
                <a href="../registro/registroCorreo.php"> <button type="submit" id="registra">Regresar</button></a>
             </div>
         
-            <?php include("../footer/footer.php"); ?>
+         
         </body>
-    
+        <?php include("../footer/footer.php"); ?>
     
     <?php
     

@@ -1,11 +1,10 @@
-
-
+<?php include("../nav/nav.php"); ?>
 <link rel="stylesheet" href="../css/Domicilio.css">
 <main>
     <div class="container">
 
         <div id="tabla">
-            <form action="../controlador/actDomicilio.php?id=<?php echo $id ?>" method="POST">
+            <form action="../controlador/actDomicilio.php?id_usuario=<?php echo $id_usuario ?>" method="POST">
                 <table border="1.5px">
                     <fieldset>
                         <legend style="text-align: center;">Datos personales</legend>
@@ -89,3 +88,5 @@
     </div>
 
 </main>
+
+<?php include("../footer/footer.php"); ?>

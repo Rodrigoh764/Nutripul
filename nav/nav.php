@@ -9,7 +9,9 @@
                     <li><a href="###"> Menú </a></li>
                     <li><a href="../vista/principal.php">Inicio</a></li>
                     <li><a href="#"><img src="../img/Carrito/carrito.png" id="carrito"></a></li>
-                    <input type="search" value="Buscar Producto" id="buscador">
+                    <form action="../Productos/Busqueda.php" method="GET">
+                        <input type="search" placeholder="Buscar" name="busqueda" id="buscador">
+                    </form>
         </div>
         </ul>
     </nav> -->

@@ -1,0 +1,111 @@
+/* STYLE PARA CREAR CUENTA */
+
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color:#EFECEC;
+
+}
+h1{
+    color: #002133;
+    font-size: 35px;
+    font-style: oblique;
+    text-shadow: 2px 2px 7px #1a4f88;
+    text-align: center;
+    padding-top: 120px;
+    padding-bottom: 0px;
+    margin-top: -7%;
+}
+label{
+    color: #002133;
+    font-size: 35px;
+    font-style: initial;
+    text-shadow: 2px 2px 7px #ffffff;
+}
+#formulario{
+    padding-top: 0px;
+    margin-top: 0px;
+    text-align: center;
+    
+}
+form{
+    /*SE MODIFICO PARA EL REGISTRO EMAIL*/
+    border-radius: 20px;
+    background-color: rgb(148, 148, 148);
+    display: inline-block;
+    padding: 30px;
+    margin-bottom: 85px;
+    width: 500px;
+    box-shadow: 5px 5px 15px  #003d63;
+    height: 280px;
+    margin-top: -9%;
+}
+#registra{
+font-size: 20px;
+margin-top: 50px;
+margin-left: 0px;
+}
+button{
+    margin-left: 40px;
+    padding: 15px;
+    width: 200px;
+    background:rgb(23, 91, 116);
+    color: #ffffff;
+    text-shadow: 5px 5px 10px #000000;
+    font-size: 30px;
+    transition: all ease 1s;
+    transform: translatex(0);
+    opacity:1;
+    border-radius: 50px;
+    margin-bottom: 20%;
+}
+button:hover{
+    background-color:  rgb(85, 162, 172);
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px 5px #003d63;
+    cursor: pointer;
+    transform: translatex(0px);
+    opacity:1;
+    
+}
+
+
+#entrada{
+    margin-top: 50px;
+    font-size: 30px;
+    margin-bottom: 10px;
+    background: transparent;
+    border: none;
+    border-bottom: 5px solid rgb(0, 166, 255);
+    color: rgb(0, 0, 0);
+    outline: none;
+    width: 300px;
+  }
+#entrada2{
+    margin-top: 0px;
+    font-size: 30px;
+    margin-bottom: 10px;
+    background: transparent;
+    border: none;
+    border-bottom: 5px solid rgb(0, 166, 255);
+    color: rgb(0, 0, 0);
+    outline: none;
+    width: 300px;
+  }
+  #registra2{
+    font-size: 30px;
+    margin-top: 15px;
+ /* padding:  10px; */
+    }
+    #registra3{
+        font-size: 20px;
+        margin-top: 15px;
+        margin-left: 0px;
+       }
+  #titulo{
+margin-top: 0px;
+padding-top: 0px;
+  }
+                          
+                        

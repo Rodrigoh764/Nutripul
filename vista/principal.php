@@ -1,6 +1,9 @@
 <!-- PAGINA PRICIPAL DE TODO, SIN REGISTRARSE -->
 <?php 
+// BARRA DE NAVEGACION
 include("../nav/navPrincipal.php");
-include("../footer/footer.php");
-?>
 
+// CONTENIDO
+include("../vista/contenido.php");
+
+?>

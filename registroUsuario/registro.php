@@ -1,9 +1,9 @@
 <?php
-include("../nav/nav.php");
+include("../nav/navLiga.php");
 ?>
 
 
-<link rel="stylesheet" href="../css/registroUsuario.css"> 
+<link rel="stylesheet" href="../css/registroUsuarioMod.css"> 
 
 <body onload="Javascript:history.go(1);" onunload="Javascript:history.go(1);">
 <h1>REGISTRO</h1>    
@@ -21,3 +21,4 @@ include("../nav/nav.php");
     </div>
 
 </body>
+<?php include("../footer/footer.php"); ?>

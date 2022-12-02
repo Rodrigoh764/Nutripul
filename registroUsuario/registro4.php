@@ -3,7 +3,7 @@ include("../nav/nav.php");
 ?>
 
 
-<link rel="stylesheet" href="../css/registroUsuario.css"> 
+<link rel="stylesheet" href="../css/registroUsuarioMod.css"> 
    
 <body onload="Javascript:history.go(1);" onunload="Javascript:history.go(1)">
 <h1>REGISTRO</h1>    

@@ -2,7 +2,7 @@
 include("../nav/nav.php");
 ?>
 
-<link rel="stylesheet" href="../css/registroUsuario.css">
+<link rel="stylesheet" href="../css/registroUser.css">
 <body onload="Javascript:history.go(1);" onunload="Javascript:history.go(1)">
     
 <h1></h1>

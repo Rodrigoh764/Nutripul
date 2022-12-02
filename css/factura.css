@@ -1,0 +1,52 @@
+*{
+    background-color: rgb(255, 250, 221);
+}
+.container{
+    width: 100%;
+}
+.tabla{
+    width: 100%;
+}
+#firma{
+    height: 0px;
+}
+#logo{
+    width: 200px;
+}
+#imagenLogo{
+    width: 100%;
+}
+
+.fecha{
+    width: 30%;
+}
+.titulo{
+    text-align: center;
+}
+.datos{
+    padding-bottom: 30px;
+}
+.productos{
+    padding-bottom: 30%px;
+}
+.productos,table,tr{
+    height: 30px;
+}
+.total{
+    margin-top: 100px;
+    padding-bottom: 30px;
+}
+.firma{
+    padding-bottom: 30px;
+}
+.info{
+    height: 30px;
+}
+.final{
+    text-align: center;
+    height: 30px;
+}
+#obs{
+    width: 75%;
+    height: 150px;
+}

@@ -12,6 +12,8 @@ h1{
     font-size: 35px;
     font-style: oblique;
     text-shadow: 2px 2px 7px #ffffff;
+    text-align: center;
+    padding-top: 0px;
 }
 #formulario{
     /* margin-left: 20px; */
@@ -20,19 +22,23 @@ h1{
  
 }
 form{
+    /*SE MODIFICO PARA EL INGRESO CON TELEFONO Y CONTRASEÑA*/
     border-radius: 20px;
     background-color: rgb(148, 148, 148);
     display: inline-block;
     padding: 30px;
-    margin-bottom: 74px;
+    margin-bottom: 41px;
     width: 500px;
     box-shadow: 5px 5px 15px  #003d63;
+    height: 280px;
+    margin-top: -7%;
 }
 
 
 
 button{
     padding: 10px;
+    margin-bottom: 8.8%;
     width: 300px;
     background:rgb(23, 91, 116);
     color: #ffffff;
@@ -42,7 +48,7 @@ button{
     transform: translatex(0);
     opacity:1;
     border-radius: 50px;
-
+    margin-bottom: 4%;
 }
 button:hover{
     background-color:  rgb(85, 162, 172);

@@ -1,0 +1,81 @@
+body{
+    margin: 0;
+}
+
+header{
+    background-color: brown;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+nav ul{
+    list-style: none;
+    overflow: hidden; 
+}
+
+nav ul li{
+    float: right;
+    font-size: 25px;
+}
+
+input {
+    width: 300px;
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+nav ul li a{
+    display: block; 
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+nav ul li:hover{
+    background: rgb(202, 54, 54);
+}
+
+#Logo{
+    float: left;
+    height: 110px;
+    margin-right: 100px;
+}
+
+#Carrito{
+    float: right;
+    max-width: 30px;
+}
+
+.mostrar{
+    position: absolute;
+    overflow: hidden;
+    display: none;
+    background-color: rgb(115, 102, 102);
+}
+
+.accion:hover .mostrar{
+    display: block;
+}
+
+li a:hover{
+  background-color: rgb(26, 95, 205);
+  color: white;
+}
+
+@media (max-width:800px) {
+    header{
+        flex-direction: column;
+    }
+
+    nav{
+       margin-top: -18px;
+       margin-bottom: -20px;
+    }
+}

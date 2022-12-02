@@ -3,9 +3,9 @@ include("../conexionbd/conexionBD.php");
 $conexion = conectar();
 $codigo = $_GET["codigo"];
 $verificacion = $_POST["verificacion"];
-$id = $_GET["id"];
+$id_usuario = $_GET["id_usuario"];
 if ($codigo == $verificacion) {
-    $consulta = "delete from clientes where cliente_id='$id'";
+    $consulta = "delete from clientes where cliente_id='$id_usuario'";
     $result = mysqli_query($conexion, $consulta);
 
 ?>
@@ -40,7 +40,7 @@ if ($codigo == $verificacion) {
 
     <div id="confirmar">
         <h1 id="titulo">Codigo de verificación incorrecto, Vuelva a intentarlo</h1>
-        <a href="../eliminarCuenta/eliminarCuenta.php?id=<?php echo $id ?>"><button id="registra4">Regresar</button></a>
+        <a href="../eliminarCuenta/eliminarCuenta.php?id_usuario=<?php echo $id_usuario ?>"><button id="registra4">Regresar</button></a>
     </div>
     <?php include("../footer/footer.php"); ?>
 <?php }

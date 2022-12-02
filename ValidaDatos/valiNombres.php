@@ -22,7 +22,7 @@ $resultado = mysqli_query($conexion, $consulta);
 <?php
 include("../nav/nav.php");
 ?>
-    <link rel="stylesheet" href="../css/registroUsuario.css">
+    <link rel="stylesheet" href="../css/registroExitoso.css">
 
     
     <body  onload="Javascript:history.go(1);" onunload="Javascript:history.go(1)">
@@ -33,3 +33,7 @@ include("../nav/nav.php");
         </div>
     
     </body>
+
+<?php
+include("../footer/footer.php");
+?>

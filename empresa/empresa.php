@@ -1,10 +1,8 @@
 <?php
-include("navEmpresa.php");
-$id = $_GET["id"];
+include("../nav/navUsuario.php");
+// $id = $_GET["id"]; VERIFICAR PARA QUE ES ESTO LO QUITE
 ?>
 <link rel="stylesheet" href="../css/empresa.css">
-
-
 
 
 <div class="container">
@@ -20,23 +18,7 @@ $id = $_GET["id"];
     </div>
    
 </div>
-<footer>
-       
-
-<!-- <div class="redes">
-    <img id="redes" src="../img/redes/facebook.png">
-    <img id="redes" src="../img/redes/insta.png">
-    <strong id="seguir">Siguenos en nuestras redes:</strong>
-
-</div> -->
-
-<!-- . -->
-
-
-
-    <img src="../img/frutas/logoTransp1.png" id="logoBajo">
-    
-</footer>
+<
 
 
 

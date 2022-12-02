@@ -11,7 +11,7 @@ $cont = strlen($contraseña1);
 $sql = "select MAX(cliente_id) cliente_id from clientes";
 $result = mysqli_query($conexion, $sql);
 $mostrar = mysqli_fetch_array($result);
-$id = $mostrar["cliente_id"];
+$id_usuario = $mostrar["cliente_id"];
 
 if ($contraseña1 === $contraseña2) {
     if ($cont < 8) {
@@ -21,7 +21,7 @@ if ($contraseña1 === $contraseña2) {
 include("../nav/nav.php");
 ?>
 
-<link rel="stylesheet" href="../css/registroUsuario.css">
+<link rel="stylesheet" href="../css/registroError.css">
     
     <body>
     
@@ -32,7 +32,9 @@ include("../nav/nav.php");
     
  
     </body>
-
+    <?php
+include("../footer/footer.php");
+?>
 
 <?php
 ?>
@@ -40,7 +42,7 @@ include("../nav/nav.php");
 <?php
         exit;
     }
-    $consulta = "update clientes set cliente_password='$contraseña1' where cliente_id='$id'";
+    $consulta = "update clientes set cliente_password='$contraseña1' where cliente_id='$id_usuario'";
     $resultado = mysqli_query($conexion, $consulta);
 
     ?>
@@ -49,18 +51,21 @@ include("../nav/nav.php");
 include("../nav/nav.php");
 ?>
 
-<link rel="stylesheet" href="../css/registroUsuario.css">
+<link rel="stylesheet" href="../css/registroExitoso.css">
     
     <body  onload="Javascript:history.go(1);" onunload="Javascript:history.go(1)">
     
         <div id="formulario">
             <h1>¡CONTRASEÑA REGISTRADA DE MANERA EXITOSA!</h1>
             <!-- agregamos el echo valor -->
-           <a href="../vista/principalUser.php?id=<?php echo $id; ?> "> <button type="submit" id="registra">FINALIZAR</button></a>
+           <a href="../vista/principalUser.php?id_usuario=<?php echo $id_usuario; ?> "> <button type="submit" id="registra">FINALIZAR</button></a>
         </div>
     
    
     </body>
+    <?php
+include("../footer/footer.php");
+?>
     <?php
 
     // header("Location: http://localhost/nutripul/registro/contraseñaRegistrada.php");
@@ -71,7 +76,7 @@ include("../nav/nav.php");
 include("../nav/nav.php");
 ?>
 
-<link rel="stylesheet" href="../css/registroUsuario.css">
+<link rel="stylesheet" href="../css/registroError.css">
     
     <body>
     
@@ -81,6 +86,9 @@ include("../nav/nav.php");
         </div>
 
     </body>
+    <?php
+include("../footer/footer.php");
+?>
 
 
 <?php

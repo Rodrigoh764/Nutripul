@@ -23,7 +23,7 @@ function validating($telefono, $conec, $num)
 include("../nav/nav.php");
 ?>
 
-<link rel="stylesheet" href="../css/registroUsuario.css">
+<link rel="stylesheet" href="../css/registroExitoso.css">
         
         <body  onload="Javascript:history.go(1);" onunload="Javascript:history.go(1)">
         
@@ -33,6 +33,9 @@ include("../nav/nav.php");
             </div>
   
         </body>
+<?php
+include("../footer/footer.php");
+?>
         <?php
     } else {
         ?>
@@ -42,17 +45,20 @@ include("../nav/nav.php");
 include("../nav/nav.php");
 ?>
 
-<link rel="stylesheet" href="../css/registroUsuario.css">
+<link rel="stylesheet" href="../css/registroError.css">
     <body>
     
         <div id="formulario">
-            <h1>NÚMERO NO VALIDO, VUELVA A INTENTARLO</h1>
+            <h1>NÚMERO NO VALIDO <br>VUELVA A INTENTARLO </h1>
+          
            <a href="../registro/registroTelefono.php"> <button type="submit" id="registrar">regresar</button></a>
         </div>
     
 
     </body>
-
+<?php
+include("../footer/footer.php");
+?>
 
 <?php
 

@@ -30,7 +30,7 @@
 
                     </tr>
                     <tr>
-                        <td colspan="4"> </td>
+                        <td colspan="4"><?php echo $mostrar["calle"] ?></td>
                     </tr>
                     <tr>
                         <th>Codigo Postal</th>
@@ -60,3 +60,7 @@
     </div>
 
 </main>
+
+<?php
+include("../footer/footer.php");
+?>

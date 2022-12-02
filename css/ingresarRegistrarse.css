@@ -1,0 +1,80 @@
+/* PLANTILLA PARA EL REGISTRO DEL USUARIO*/
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #c7c7c7;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 50%;
+}
+h1 {
+  text-align: center;
+  color: #002133;
+  font-size: 35px;
+  font-style: oblique;
+  text-shadow: 2px 2px 7px #ffffff;
+  
+}
+#formulario {
+  /* margin-left: 20px; */
+  padding-top: 140px;
+  text-align: center;
+  padding-left: 8%;
+  float: left;
+}
+#formulario1{
+    float: right;
+    padding-right: 4%;
+    margin-top: 15%;
+}
+form {
+  border-radius: 20px;
+  background-color: rgb(148, 148, 148);
+  display: inline-block;
+  padding: 30px;
+  margin-bottom: 46px;
+  margin-top: -18%;
+  width: 500px;
+  box-shadow: 5px 5px 15px #003d63;
+
+
+}
+#btn2{
+    align-items: center;
+    align-content: center;
+    margin-left: 23%;
+}
+button {
+  padding: 10px;
+  width: 300px;
+  background: rgb(23, 91, 116);
+  color: #ffffff;
+  text-shadow: 5px 5px 10px #000000;
+  font-size: 30px;
+  transition: all ease 1s;
+  transform: translatex(0);
+  opacity: 1;
+  border-radius: 50px;
+}
+button:hover {
+  background-color: rgb(85, 162, 172);
+  color: rgb(0, 0, 0);
+  text-shadow: 2px 2px 5px #003d63;
+  cursor: pointer;
+  transform: translatex(0px);
+  opacity: 1;
+}
+
+#entrada {
+  font-size: 30px;
+  margin-bottom: 10px;
+  background: transparent;
+  border: none;
+  border-bottom: 5px solid rgb(0, 166, 255);
+  color: rgb(0, 0, 0);
+  outline: none;
+  width: 300px;
+}

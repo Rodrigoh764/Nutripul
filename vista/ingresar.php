@@ -1,14 +1,12 @@
 <!-- IMPORTAMOS LA CABECERA Y EL FOOTER -->
 <?php
-include("../nav/navAsceso.php");
-include("../footer/footer.php");
-
+include("../nav/navLiga.php");
 ?>
 
 <!--SE OBTIENEN LOS DATOS DEL CLIENTE-->
 
 <!-- COLOR DE FONDO, CAJA  DEL FORMULARIO-->
-<link rel="stylesheet" href="../css/registro.css">
+<link rel="stylesheet" href="../css/registroEntrar.css">
 
 <!-- formulario -->
 <div id="formulario">
@@ -20,3 +18,7 @@ include("../footer/footer.php");
         <button type="submit">ENTRAR</button>
     </form>
 </div>
+
+<?php
+include("../footer/footer.php");
+?>
