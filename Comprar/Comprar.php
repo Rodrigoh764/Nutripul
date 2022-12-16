@@ -1,32 +1,22 @@
 <?php 
 include("../ConeBDMaster/Conexion.php");
-session_start(); 
+session_start();
+
+$id_usuario = $_GET["id_usuario"]; 
+
 if (!isset($_SESSION['MiCarrito'])) {
     header('Location: ../Productos/MenuPulpas.php');
 }
 $arreglo = $_SESSION['MiCarrito'];
-$resultado = $conexion -> query("SELECT * FROM domicilio WHERE cliente_id = 62") or die ($conexion -> error);
+$resultado = $conexion -> query("SELECT * FROM domicilio WHERE cliente_id = $id_usuario") or die ($conexion -> error);
 $fechaEntrega = $conexion -> query("SELECT DATE_ADD(Fecha, INTERVAL 5 DAY) FROM ventas WHERE id_cliente = 62") or die ($conexion -> error);
 $mostrar = mysqli_fetch_row($resultado);
-$fecha = $fechaEntrega -> fetch_assoc();
+$fecha_actual = date("d-m-Y");
 $arreglo = $_SESSION['MiCarrito'];
 
-//-----------------------------
-
-// $conexion = conectar();
-// $id_usuario = $_GET["id_usuario"];
-
-// //DTOS DEL CLIENTE
-// $consultaCliente = "select * from clientes where cliente_id ='$id_usuario'";
-// $cliente = mysqli_query($conexion, $consultaCliente);
-// $ver = mysqli_fetch_array($cliente);
 
 
 
-// //consulta a tabla domicilio
-// $sql = "select * from domicilio where cliente_id ='$id_usuario'";
-// $re = mysqli_query($conexion, $sql);
-// $mostrar = mysqli_fetch_array($re);
 
 ?>
 
@@ -40,14 +30,14 @@ $arreglo = $_SESSION['MiCarrito'];
 </head>
 <body>
     <?php include("../nav/navUsuario.php"); ?>
-    <h1 id="comprarh1">Revisa y confirma tu compra</h1>
+    <h1 id="comprarh1">Revisa y confirma tu compra <?php echo $id_usuario ?>  </h1>
     <table cellspacing="2" border="10" align="center">
         <tr>
             <td id="encabezado" colspan="2">Detalles de la entrega</td>
         </tr>
         <tr>
         <td ALIGN=LEFT>
-                <b>La entrega de tu pedido seria el: <?php echo $fecha["DATE_ADD(Fecha, INTERVAL 5 DAY)"]; ?></b>
+        <b>La entrega de tu pedido seria el: <?php echo date("d-m-Y",strtotime($fecha_actual."+ 5 days"));  ?> </b>
                 <br>
                 <?php echo $mostrar[3]; ?>, Calle: <?php echo $mostrar[4]; ?> Nº interior: <?php echo $mostrar[7]; ?> Nº exterior: <?php echo $mostrar[8]; ?>,
                 <?php echo $mostrar[1]; ?>, <?php echo $mostrar[2]; ?>, <?php echo $mostrar[6]; ?> 

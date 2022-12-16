@@ -1,5 +1,6 @@
 <?php 
 session_start(); 
+$id_usuario = $_GET["id_usuario"]; 
 include("../ConexionBDYOS/Conexion.php");
 if (!isset($_SESSION['MiCarrito'])) {
     header('Location: ../Productos/MenuPulpas.php');
@@ -19,8 +20,9 @@ for ($i = 0; $i < count($arreglo); $i++) {
         $totalEnvio = $total + 150;
     }
 }  
+
 //Siempre que se haga una compra
-$conexion -> query("INSERT INTO ventas (id_usuario, Total, Fecha, No_Pedido) VALUES (1,$totalEnvio, CURRENT_TIMESTAMP ,$numero_pedido)") or die($conexion -> error);
+$conexion -> query("INSERT INTO ventas (id_cliente, Total, Fecha, Folio) VALUES ('$id_usuario','$totalEnvio', CURRENT_TIMESTAMP ,'$numero_pedido')") or die($conexion -> error);
 $id_venta = $conexion -> insert_id;
 for ($i = 0; $i < count($arreglo); $i++) {
     $conexion -> query("INSERT INTO productos_venta(id_venta, id_producto, Cantidad, Subtotal)
@@ -28,6 +30,8 @@ for ($i = 0; $i < count($arreglo); $i++) {
     $conexion -> query("UPDATE productos SET Existencia_L = Existencia_L -".$arreglo[$i]['Cantidad']." WHERE id = ".$arreglo[$i]['Id']) or die($conexion -> error);
 }
 unset($_SESSION['MiCarrito']);
+
+
 ?>
 
 <!DOCTYPE html>

@@ -1,11 +1,12 @@
 <?php
 include("../nav/navUsuario.php");
 include("../ConeBDMaster/Conexion.php");
+$id_usuario = $_GET["id_usuario"]; 
 $resultado = $conexion -> query("SELECT DATE_FORMAT(Fecha,'%d/%m/%Y') AS Fecha, Folio, Cantidad, Subtotal, Imagen, Nombre, Precio
                                 FROM ventas AS a 
                                 INNER JOIN Productos_venta AS b ON b.id_venta = a.id 
                                 INNER JOIN productos AS c ON b.id_producto = c.id
-                                WHERE id_cliente = 62 GROUP BY Nombre") or die ($conexion -> error);
+                                WHERE id_cliente = $id_usuario GROUP BY Nombre") or die ($conexion -> error);
 
 ?>
    <?php ?>

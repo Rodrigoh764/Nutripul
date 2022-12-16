@@ -4,7 +4,7 @@
 include("../nav/navUsuario.php");
 
 include("../ConexionBDYOS/Conexion.php");
-$resultado = $conexion->query("SELECT * FROM productos WHERE id <= 4 ORDER BY id DESC") or die($conexion->error);
+$resultado = $conexion->query("SELECT * FROM productos ORDER BY RAND() limit 4") or die($conexion->error);
 
 $id_usuario = $_GET["id_usuario"];//tomamos el id del cliente guardandolo en id_usuario
 ?>
@@ -45,7 +45,7 @@ $id_usuario = $_GET["id_usuario"];//tomamos el id del cliente guardandolo en id_
                     <p id="precio">$<?php echo number_format($mostrar["Precio"], 2, '.', ''); ?>
                     <p><br>
                     <!-- SE AGREGO EL ?ID=1 PARA QUE PUDIERA IR A LA PAGINA ASIGNADA -->
-                    <form class="boton1" action="../Productos/VistaProducto.php?id=1 & id_usuario=<?php echo $id_usuario ?>" method="POST" enctype="multipart/form-data">
+                    <form class="boton1" action="../Productos/VistaProducto.php?id=<?php echo $mostrar["id"];?> & id_usuario=<?php echo $id_usuario ?>" method="POST" enctype="multipart/form-data">
                         <input class="boton" type="submit" value="Ver producto" name="btnVer">
                         <!-- SI GUARDA EL ID_USUARIO -->
                     </form>

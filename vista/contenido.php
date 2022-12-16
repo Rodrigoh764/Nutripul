@@ -56,5 +56,5 @@ $resultado = $conexion->query("SELECT * FROM productos WHERE id <= 4 ORDER BY id
 
 <?php
 
-include("../NutripulpParteYoss/Footer/Footer.php");
+include("../footer/footer.php");
 ?>

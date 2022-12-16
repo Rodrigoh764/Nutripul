@@ -1,6 +1,6 @@
 <?php
     $servidor = "localhost";
-    $nombreBD = "nutripul";
+    $nombreBD = "nutripulp";
     $usuario = "root";
     $contraseña = "";
 

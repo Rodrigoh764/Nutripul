@@ -1,108 +1,61 @@
 <?php
-include("../conexionbd/conexionBD.php");
 
-$conexion = conectar();
+include("../ConeBDMaster/Conexion.php");
+
+
 $id_usuario = $_GET["id_usuario"];
 
-//DTOS DEL CLIENTE
-$consultaCliente = "select * from clientes where cliente_id ='$id_usuario'";
-$cliente = mysqli_query($conexion, $consultaCliente);
-$ver = mysqli_fetch_array($cliente);
+
+//con esto tomamos el ultimo registro del Folio pedido
+$sql = " select MAX(id) id from ventas";
+$result = mysqli_query($conexion, $sql);
+$mostrar = mysqli_fetch_array($result);
+
+$numero_pedido = $mostrar["id"]; //ID DE VENTAS
+
+//CONSULTA LOS DATOS DEL CLIENTE
+$sql1 = "select * from clientes where cliente_id = '$id_usuario'";
+$result = mysqli_query($conexion, $sql1);
+$ver = mysqli_fetch_array($result);
+
+//CONSULTA EL DOMICILIO
+$sql2 = "select * from domicilio where cliente_id = '$id_usuario'";
+$result = mysqli_query($conexion, $sql2);
+$mostrar = mysqli_fetch_array($result);
 
 
-
-//consulta a tabla domicilio
-$sql = "select * from domicilio where cliente_id ='$id_usuario'";
-$re = mysqli_query($conexion, $sql);
-$mostrar = mysqli_fetch_array($re);
-//---------------------------------------------------
-
-// include("../ConeBDMaster/Conexion.php");
-include("../ConexionBDYOS/Conexion.php");
-session_start();
-
-//--------------------------
-$nombre = "";
-$precio = "";
-$imagen = "";
-$cantidad = "";
-$stock = "";
-if (isset($_SESSION['MiCarrito'])) {
-    //Si existe buscamos si ya estaba agregado el producto
-    if (isset($_GET['id'])) {
-        $arreglo = $_SESSION['MiCarrito'];
-        $encontro = false;
-        $numero = 0;
-        for ($i = 0; $i < count($arreglo); $i++) {
-            if ($arreglo[$i]['Id'] == $_GET['id']) {
-                $encontro = true;
-                $numero = $i;
-            }
-        }
-        if ($encontro == true) {
-            $cantidad = $_POST["cantidad"];
-            $arreglo[$numero]['Cantidad'] = $arreglo[$numero]['Cantidad'] + $cantidad;
-            $_SESSION['MiCarrito'] = $arreglo;
-        } else {
-            $resultado = $conexion->query('SELECT * FROM productos WHERE id = ' . $_GET['id']) or die($conexion->error);
-            $mostrar = mysqli_fetch_row($resultado);
-            $nombre = $mostrar[1];
-            $precio = $mostrar[2];
-            $imagen = $mostrar[4];
-            $stock = $mostrar[3];
-            $cantidad = $_POST["cantidad"];
-            if ($cantidad > 0) {
-                if ($cantidad <= $stock) {
-                    $arregloNuevo = array(
-                        'Id' => $_GET['id'],
-                        'Nombre' => $nombre,
-                        'Precio' => $precio,
-                        'Imagen' => $imagen,
-                        'Cantidad' => $cantidad,
-                        'Stock' => $stock
-                    );
-                    array_push($arreglo, $arregloNuevo);
-                    $_SESSION['MiCarrito'] = $arreglo;
-                } else
-                    echo "<script>alert('La cantidad deseada exede el numero de productos disponibles');</script>";
-            } else
-                echo "<script>alert('La cantidad debe ser mayor a 0');</script>";
-        }
-    }
-} else {
-    //Creamos la varible
-    if (isset($_GET['id'])) {
-        $resultado = $conexion->query('SELECT * FROM productos WHERE id = ' . $_GET['id']) or die($conexion->error);
-        $mostrar = mysqli_fetch_row($resultado);
-        $nombre = $mostrar[1];
-        $precio = $mostrar[2];
-        $imagen = $mostrar[4];
-        $stock = $mostrar[3];
-        $cantidad = $_POST["cantidad"];
-        if ($cantidad > 0) {
-            if ($cantidad <= $stock) {
-                $arreglo[] = array(
-                    'Id' => $_GET['id'],
-                    'Nombre' => $nombre,
-                    'Precio' => $precio,
-                    'Imagen' => $imagen,
-                    'Cantidad' => $cantidad,
-                    'Stock' => $stock
-                );
-                $_SESSION['MiCarrito'] = $arreglo;
-            } else
-                echo "<script>alert('La cantidad deseada exede el numero de productos disponibles');</script>";
-        } else
-            echo "<script>alert('La cantidad debe ser mayor a 0');</script>";
-    }
-}
+//CONSULTA DE VENTAS
+$sql3 =  "select * from ventas where id = '$numero_pedido'";
+$result = mysqli_query($conexion, $sql3);
+$ventas = mysqli_fetch_array($result);
 
 
+//CONSULTA productos_ventas
+$sql4 = "select * from productos_venta where id_venta = '$numero_pedido'";
+$re = mysqli_query($conexion, $sql4);
 
 //---------------------------------------
+
+$sql5 = "select * from ventas WHERE id = '$numero_pedido' ";
+$resul5 = mysqli_query($conexion, $sql5);
+$mos = mysqli_fetch_array($resul5);
+$total = $mos["Total"];
+
+//---------------------------------------
+
+$sql6 = "SELECT * FROM productos_venta AS a 
+INNER JOIN productos AS b ON a.id_producto = b.id
+WHERE id_venta = '$numero_pedido'";
+$resul6 = mysqli_query($conexion, $sql6);
+// $pro = mysqli_fetch_array($resul6);
+
+
+
 date_default_timezone_set('America/Mexico_City');
-$DateAndTime = date('m-d-Y ');
+$DateAndTime = date('d-m-Y ');
 $Time = date(' h:i:s a', time());
+
+
 
 
 
@@ -125,7 +78,7 @@ $Time = date(' h:i:s a', time());
                 <td><strong>AÑO</strong></td>
             </tr>
             <tr class="titulo">
-                <td colspan="3"><?php echo $DateAndTime; ?></td>
+                <td colspan="3"> <?php echo $ventas["Fecha"] ?> </td>
             </tr>
             <tr class="titulo">
                 <td colspan="3"><?php echo $Time; ?></td>
@@ -148,8 +101,8 @@ $Time = date(' h:i:s a', time());
                 <td colspan="3"><strong>E-mail:</strong><?php echo $ver["cliente_correo"] ?></td>
             </tr>
             <tr class="info">
-                <td colspan="2"><strong>Forma de pago:</strong> Efectivo</td>
-                <td colspan="3"><strong>Folio:</strong> <?php echo $id_usuario ?></td>
+               
+                <td colspan="3"><strong>Folio:</strong> <?php echo $ventas["Folio"]; ?></td>
             </tr>
         </table>
     </div>
@@ -160,40 +113,34 @@ $Time = date(' h:i:s a', time());
     <div class="productos">
         <table class="tabla" border="1px">
             <tr class="titulo">
-                <td><strong>Producto</strong></td>
+                <td><strong>ID_Producto</strong></td>
                 <td><strong>Nombre</strong></td>
                 <td><strong>Cant.</strong></td>
                 <td><strong>Precio Unit.</strong></td>
-                <td><strong>Total</strong></td>
-
-
+                <td><strong>SubTotal</strong></td>
             </tr>
-            <?php
-            $subTotal = 0; //Cada producto
-            $total = 0; //Suma productos
-            $totalEnvio = 0;
-            for ($i = 0; $i < count($arreglo); $i++) {
-                $subTotal = $arreglo[$i]['Precio'] * $arreglo[$i]['Cantidad'];
-                $total = $total + $subTotal;
-                if ($total >= 595) {
-                    $totalEnvio = $total;
-                } else {
-                    $totalEnvio = $total + 150;
-                }
-            ?>
+            
                 <tr>
-                    <td>1050</td>
-                    <td><?php echo  $arregloCarrito[$i]['Nombre']; ?></td>
-                    <td><?php echo $b = $arreglo[$i]['Cantidad']; ?> Kg</td>
-                    <td>$<?php echo $a = number_format($arreglo[$i]['Precio'], 2, '.', ''); ?></td>
-                    <td> <?php echo $res = $a * $b; ?> </td>
 
+                <?php while($productos=mysqli_fetch_assoc($resul6)){ ?>
+
+
+                    <td><?php echo $productos["id_producto"] ?> </td>
+
+                    <td><?php echo $productos["Nombre"] ?></td>
+
+                    <td><?php echo $productos["Cantidad"] ?></td>
+                    
+                    <td> <?php echo $productos["Precio"] ?></td>
+
+                    <td> <?php echo $productos["Subtotal"]?> </td>
 
 
                 </tr>
-            <?php
-            }
-            ?>
+                    
+                <?php } ?>
+
+
         </table>
     </div>
     <br>
@@ -208,21 +155,27 @@ $Time = date(' h:i:s a', time());
                 <!-- <td><strong>Cant. Kg</strong></td> -->
                 <td><strong>Total a pagar</strong></td>
             </tr>
+            
+     
             <tr>
 
-                <td> <?php
+                <td> 
+                     <?php
                         if ($total >= 595) {
                             echo ("Envio gratis");
                         } else {
                             echo ("$150.00");
                         }
-                        ?>
+                        ?> 
 
                 </td>
-                <!-- <td></td> -->
-                <td>$<?php echo number_format($totalEnvio, 2, '.', ''); ?></td>
-            </tr>
 
+                
+
+                <td>$ <?php echo  $total; ?> </td>
+           
+            </tr>
+     
         </table>
     </div>
 
@@ -244,3 +197,7 @@ $Time = date(' h:i:s a', time());
         </table>
     </div>
 </div>
+
+<button> <a href="../vista/principalUser.php?id_usuario=<?php echo $id_usuario; ?>">Ir al inicio</a> </button>
+
+<button> <a href="../factura/factura.php">DESCARGAR</a> </button>

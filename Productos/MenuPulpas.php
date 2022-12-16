@@ -1,5 +1,5 @@
 <?php 
-    include '../NutripulpParteYoss/ConexionBD/Conexion.php';
+    include ("../ConexionBDYOS/Conexion.php");
 
 
 ?>
@@ -81,7 +81,7 @@
     <h1>Productos más vendidos</h1>
     <?php 
      include("../Grafico/Grafico.php");
-    include '../NutripulpParteYoss/Footer/Footer.php';
+    include '../footer/footer.php';
     ?>
 </body>
 </html>

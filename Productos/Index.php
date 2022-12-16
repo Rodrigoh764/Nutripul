@@ -1,6 +1,6 @@
 <?php
 include ("../ConexionBD/Conexion.php");
-$resultado = $conexion -> query("SELECT * FROM productos WHERE id <= 4 ORDER BY id DESC") or die ($conexion -> error);
+$resultado = $conexion -> query("SELECT * FROM productos ORDER BY RAND() limit 4") or die ($conexion -> error);
 ?>
 
 <!DOCTYPE html>

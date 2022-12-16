@@ -24,7 +24,7 @@ $res = $conexion -> query($sql);
         ]);
 
         var options = {
-          title: 'Productos más vendidos', 
+          
           is3D: true,
           pieSliceTextStyle: {
             color: 'black',
